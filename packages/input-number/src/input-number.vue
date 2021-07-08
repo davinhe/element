@@ -196,8 +196,8 @@
           this.$refs.input.setCurrentValue(this.currentValue);
           return;
         }
-        this.$emit('input', newVal);
         this.$emit('change', newVal, oldVal);
+        this.$emit('input', newVal);
         this.currentValue = newVal;
       },
       handleInputChange(value) {
