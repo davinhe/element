@@ -262,7 +262,11 @@
         if (this.router) {
           this.routeToItem(item, (error) => {
             this.activeIndex = oldActiveIndex;
+<<<<<<< HEAD
             if (error) console.error(error);
+=======
+            console.error(error);
+>>>>>>> parent of c6e4a11b... Menu: remove print error
           });
         }
       },
