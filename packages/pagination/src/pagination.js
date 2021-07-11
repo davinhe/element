@@ -299,7 +299,6 @@ export default {
   methods: {
     handleCurrentChange(val) {
       this.internalCurrentPage = this.getValidCurrentPage(val);
-      this.userChangePageSize = true;
       this.emitChange();
     },
 
@@ -344,10 +343,9 @@ export default {
 
     emitChange() {
       this.$nextTick(() => {
-        if (this.internalCurrentPage !== this.lastEmittedPage || this.userChangePageSize) {
+        if (this.internalCurrentPage !== this.lastEmittedPage) {
           this.$emit('current-change', this.internalCurrentPage);
           this.lastEmittedPage = this.internalCurrentPage;
-          this.userChangePageSize = false;
         }
       });
     }
